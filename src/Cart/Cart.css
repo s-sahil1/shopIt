@@ -1,0 +1,115 @@
+.cart-items {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.cart-item-photo>img {
+    width: auto;
+    max-width: 100px;
+    height: auto;
+    max-height: 100px;
+
+}
+
+.cart-item-photo {
+    display: inline-block;
+    width: 8rem;
+    /* background-color: aliceblue; */
+}
+
+.cart-item-name,
+.cart-item-price {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-top: 2.2rem;
+    width: 9rem;
+    /* background-color: aliceblue; */
+}
+
+.cart-item-name{
+    margin-right: 3rem;
+}
+
+.completeCart {
+    margin-top: 7rem;
+    margin-bottom: 5rem;
+    padding-left: 15%;
+    padding-right: 15%;
+    display: flex;
+    justify-content: center;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.cart-top{
+    display: flex;
+    font-size: 1.5rem;
+    color: gray;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+.eachItemCart{
+    background-color: white;
+    padding: 2rem 5rem 2rem;
+    border-radius: 15px 0 0 15px;
+}
+
+.order-summary{
+    background: lightgray;
+    width: 11rem;
+    padding: 2rem 1.8rem 2rem;    
+    font-weight: 500;
+    border-radius: 0 15px 15px 0;    
+}
+
+.order-summary-title{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.product-detail-top{
+    display: flex;
+    font-size: 12px;
+    color: gray;
+    justify-content: space-between;
+}
+
+.product-detail-head{
+    margin-right: 7rem;
+}
+
+.item-summary{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.total-price-summary{
+    display: flex;
+    justify-content: space-between;
+}
+
+.shipping-price{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+}
+
+.checkout-button{
+    background-color: black;
+    color: white;
+    height: 2.3rem;
+    border: 1px solid black;
+    width: 8rem;
+    margin-top: 1.1rem;
+    margin-left: 1.5rem;
+}
+
+.checkout-button:hover{
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: black;
+    box-shadow: 5px 8px 5px gray;
+}

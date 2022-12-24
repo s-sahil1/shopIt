@@ -1,0 +1,30 @@
+.completeItem{
+    background-color:aliceblue;
+    width: 17rem;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+}
+
+.completeItemImage > img{
+    height: 20px;
+    width: 20px;
+}
+
+.quantity{
+    width: 5rem;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2.2rem;
+    cursor: pointer;
+}
+.quantity>button{
+    height: 1rem;
+}
+
+.cart-items{
+    height:7rem;
+}
+
+

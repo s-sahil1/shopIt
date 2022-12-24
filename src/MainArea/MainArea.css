@@ -1,0 +1,104 @@
+body{
+    background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        
+}
+.Main_Area {
+    height: auto;
+    margin-left: 15%;
+    margin-right: 15%;
+
+}
+
+.Photo-Cards {
+    width: 100%;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px;
+    padding-top: 50px;
+    display: flex;
+    /* display: -webkit-box; */
+    -webkit-box-pack: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row wrap;
+    
+
+}
+
+.each-card {
+    margin: 20px;
+
+
+    width: 18rem;
+    height: 21.4rem;
+    border-radius: 10px;
+    background-color: #FFDEE9;
+    background: linear-gradient(45deg, #ff5f4b, #821564);
+
+}
+
+.each-card:focus{
+    box-shadow: 0 0 3pt 2pt red;
+}
+
+.tilt{
+    box-shadow: 0 20px 30px -13px rgba(0,0,0,0.7);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: perspective(500px) rotateX('0deg') rotateY('0deg') scale3d(1,1,1);
+    transform: perspective(500px) rotateX('0deg') rotateY('0deg') scale3d(1,1,1);
+
+}
+.tilt:hover{
+    box-shadow: 0 40px 70px -15px rgba(0,0,0,0.7);
+    cursor: pointer;
+}
+.addCartMenu{
+    position: fixed;
+    right: 10%;
+    margin-top: 1%;
+    
+}
+
+.addCartPic{
+    /* right: 5%; */
+    position: fixed;
+}
+
+/* .addCartMenu .addCartPic{
+    right: 5%;
+    position: fixed;
+}
+.collapsible .addCartPic{
+    right: 5%;
+    position: fixed;
+}
+.addCheadeartMenu .addCartPic{
+    right: 5%;
+    position: fixed;
+} */
+
+.addCartMenu:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+.numberItems{
+    position: absolute;
+    z-index: 1;
+    top: -0.5rem;
+    right: -0.5rem;
+    background-color: black;
+    color: white;
+    border-radius: 100%;
+    width: 1rem;
+    padding-left: 8px;
+    padding-bottom: 3px;
+    
+
+}

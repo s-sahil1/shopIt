@@ -1,0 +1,83 @@
+.PhotoCard{
+
+    width: 17.9rem;
+    height: 21rem;
+
+    border: 0.8px #090909 solid;
+    border-radius: 10px;
+    padding-top: 5px;
+}
+
+.Image{
+    justify-content: center;
+    text-align: center;
+    height: 12rem;
+    width: 17rem;
+    padding-left: 4px;
+}
+.Image:hover{
+    transform:scale(1.2);
+    cursor: pointer;
+}
+
+.Image>img{
+    width: auto;
+    max-width: 17rem;
+    height: auto;
+    max-height: 12rem;
+}
+
+.Image-Description{
+    margin-top: 15px;
+    text-align: center;
+    font-size: larger;
+    font-weight: 500;
+}
+.Price{
+    text-align: center;
+    margin : 15px
+}
+.AddCart{
+    display: inline-block;
+    padding: 10px 20px;
+    color: #090909; 
+    text-decoration: none;
+    text-transform: uppercase;
+    outline: 2px solid #7EFF82;
+    overflow: hidden;
+    transition: color 1s;
+    background: none;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    font-weight: 700;
+}
+
+.AddCart:hover{
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.CartDiv{
+
+    display: flex;
+    justify-content: center;
+}
+
+.AddCart::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left: -50px;
+    z-index: -1;
+    width: 150%;
+    height: 100%;
+    background-color: #7EFFB2;
+    transform: scaleX(0) skewX(35deg);
+    transform-origin: left;
+    transition:transform 1s;
+}
+
+.AddCart:hover::before{
+    transform: scaleX(1) skewX(35deg);
+}

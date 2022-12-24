@@ -1,0 +1,40 @@
+.HeaderTop{
+    padding-top: 0.8rem;
+    padding-bottom: 0.5rem;
+    background-color: #F1F6F5;
+    padding-left: 0;
+
+}
+.HeaderTop,.menu{
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu>div{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+
+.menu>div{
+    margin-left: 0.3rem;
+    margin-right: 0.5rem;
+}
+
+.menu>div:hover{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu-link{
+    text-decoration: none;
+    color: black;
+}
+.menu-link:hover{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
