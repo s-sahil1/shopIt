@@ -7,20 +7,35 @@ import CartItem from "./CartItem/CartItem";
 
 
 function Cart() {
-    let num = finalCart.length;
+    
     let finNum;
     const [ finalPrice, updateFinalPrice ] = useState(0);
+    const [numCart, updateNumCart] = useState(0);
 
     useEffect(() => {
+
+        // updateCart(finalCart);
+        // console.log(cart);
+
         let final = 0;       
+        let num =0;
         finNum = 0; 
         finalCart.map((item) => {
             let price = parseInt(item[0].price * item[0].quantity);
             final = final + price;
+            num = num + parseInt(item[0].quantity);
             finNum = final;
 
             updateFinalPrice(final);
+            updateNumCart(num);
+
+            
         });
+        console.log(numCart);
+        // updateCart((prevValue)=>{
+        //     return[...prevValue , ...finalCart]
+        // });
+        // console.log(cart);
         
       });
 
@@ -35,13 +50,13 @@ function Cart() {
         });
 
         finalCart.filter((item)=>{
-            return(item[0].quantity > 1);
+            return(item[0].quantity > 0);
         });
+        console.log(finalCart);
 
-        // console.log(finalCart[0]);
+        upd
 
         calcPrice();
-
 
     }
     const calcPrice = ()=> {
@@ -57,7 +72,6 @@ function Cart() {
         console.log(finNum);
         
     }
-
     
     return (
 
@@ -66,7 +80,7 @@ function Cart() {
             <div className="eachItemCart">
                 <div className="cart-top">
                     <div>Shopping Cart</div>
-                    <div>{num} Items</div>
+                    <div>{numCart} Items</div>
                 </div>
                 <hr className="h-row"></hr>
 
@@ -90,7 +104,7 @@ function Cart() {
                 <div className="order-summary-title">Order Summary</div>
                 <hr></hr>
                 <div className="item-summary">
-                    <div>ITEMS {num}</div>
+                    <div>ITEMS {numCart}</div>
                     <div>${finalPrice}</div>
                 </div>
 
