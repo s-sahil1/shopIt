@@ -23,7 +23,6 @@ function PhotoCard(props) {
             <div className="Image-Description">{props.name}</div>
             <div className="Price">$ {props.price}</div>
             <div className="CartDiv"><button onClick={handleClick} className="AddCart">Add to cart</button></div>
-
         </div>
     );
 

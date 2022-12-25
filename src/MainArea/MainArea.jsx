@@ -17,11 +17,12 @@ function MainArea(props) {
             return (item.id === id)
         });
 
-        props.final()
+
 
         updateCart((prevItem) => {
             return [...prevItem, item];
         });
+        props.final(cart);
     }
     fCart = cart;
     // console.log(cart);
@@ -29,27 +30,7 @@ function MainArea(props) {
 
 
     const Collapsible = () => {
-        // const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
-        // return (
-        //     <div className="collapsible">
-        //         <div className="addCartMenu">
-        //             <div className="heade" {...getToggleProps()}>
-        //                 {isExpanded ? <ImCross fontSize={'2rem'} /> : <div className="addCartPic" ><BsCart fontSize={'2.3rem'} /><div className="numberItems">{num}</div></div>}
-        //             </div>
-        //             <div {...getCollapseProps()}>
-        //                 <div className="content">
-        //                     {finalCart.map((item) => {
-        //                         {/* console.log(item[0]); */}
-        //                         return (
-        //                             <CartItem name={item[0].name} image={item[0].image} price={item[0].price} />
-        //                         );
-        //                     })}
 
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     </div>
-        // );
     }
 
 

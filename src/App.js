@@ -5,11 +5,15 @@ import MainArea from './MainArea/MainArea';
 import Cart from './Cart/Cart';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { fCart } from './MainArea/MainArea';
+import React , {useState} from 'react';
 
 function App() {
 
+  const [FFcart , updateCart] = useState();
+
   const createCart = (item)=>{
-    
+    updateCart(item);
+    console.log(FFcart);        
   }
   return (
 

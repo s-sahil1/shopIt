@@ -71,7 +71,7 @@ function CartItem(props) {
 
             <div className="cart-item-name">{props.name}</div>
 
-            {console.log(props.name +'n'+ cost+' final '+ count)}
+            {/* {console.log(props.name +'n'+ cost+' final '+ count)} */}
 
             <div className="cart-item-price">$ {cost}</div>
 
