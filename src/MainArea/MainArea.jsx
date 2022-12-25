@@ -4,11 +4,10 @@ import PhotoCard from "./PhotoCard/PhotoCard";
 import Items from "./Items";
 import { BsCart } from 'react-icons/bs';
 import CartItem from "../Cart/CartItem/CartItem";
-import { ImCross } from 'react-icons/im';
 import { Link } from "react-router-dom";
-var finalCart;
+var fCart;
 
-function MainArea() {
+function MainArea(props) {
     let num = 0;
     const { cartClicked, updateCartClicked } = useState('false');
     const [cart, updateCart] = useState([]);
@@ -18,11 +17,13 @@ function MainArea() {
             return (item.id === id)
         });
 
+        props.final()
+
         updateCart((prevItem) => {
             return [...prevItem, item];
         });
     }
-    finalCart = cart;
+    fCart = cart;
     // console.log(cart);
     num = cart.length;
 
@@ -49,8 +50,6 @@ function MainArea() {
         //         </div>
         //     </div>
         // );
-
-
     }
 
 
@@ -78,7 +77,7 @@ function MainArea() {
 
         </div>
     );
-}
+} 
 
 export default MainArea;
-export { finalCart };
+export { fCart };

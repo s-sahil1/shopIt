@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { finalCart } from "../MainArea/MainArea";
+import { fCart } from "../MainArea/MainArea";
 import { useState } from "react";
 import Items from "../MainArea/Items";
 import './Cart.css';
@@ -11,6 +11,8 @@ function Cart() {
     let finNum;
     const [ finalPrice, updateFinalPrice ] = useState(0);
     const [numCart, updateNumCart] = useState(0);
+    const [FCart , updateFCart] = useState(fCart);
+    let finalCart = fCart;
 
     useEffect(() => {
 
@@ -31,31 +33,42 @@ function Cart() {
 
             
         });
-        console.log(numCart);
-        // updateCart((prevValue)=>{
-        //     return[...prevValue , ...finalCart]
-        // });
-        // console.log(cart);
         
       });
 
-    const changeQuantity = (number, id)=>{
+    const changeQuantity = async(number, id)=>{
 
-        console.log(number + ' ' + id);
+        // console.log(number + ' ' + id);
 
         finalCart.map((item) => {
             if (item[0].id === id) {
                 item[0].quantity = number;
             }
         });
+        
 
-        finalCart.filter((item)=>{
-            return(item[0].quantity > 0);
+        finalCart = finalCart.filter((item)=>{
+            if(item[0].quantity>0){
+                return item;
+            }
         });
-        console.log(finalCart);
+
+        await updateFCart((prev)=>{
+            return (prev = prev.filter((item)=>{
+                if(item[0].quantity>0){
+                    return item;
+                }
+            }));
+        });
+        await updateFCart((prev)=>{
+            return (prev = prev.filter((item)=>{
+                if(item[0].quantity>0){
+                    return item;
+                }
+            }));
+        });
 
         calcPrice();
-
     }
     const calcPrice = ()=> {
         let final = 0;       
@@ -67,7 +80,6 @@ function Cart() {
 
             updateFinalPrice(final);
         });
-        console.log(finNum);
         
     }
     
@@ -90,9 +102,9 @@ function Cart() {
 
 
 
-                {finalCart.map((item) => {
+                {FCart.map((item) => {
                     return (
-                        <CartItem image={item[0].image} name={item[0].name} price={item[0].price} id={item[0].id} quant={changeQuantity} />
+                        <CartItem image={item[0].image} name={item[0].name} price={item[0].price} id={item[0].id} quant={changeQuantity} quantity={item[0].quantity} />
                     );
 
                 })}

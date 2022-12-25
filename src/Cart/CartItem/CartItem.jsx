@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './CartItem.css';
 import { useState } from "react";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai';
@@ -6,9 +6,20 @@ import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai';
 function CartItem(props) {
 
     let [count, setCount] = useState(1);
+    let quantity = props.quantity;
     const price = parseInt(props.price);
     const id = parseInt(props.id);
-    let [cost, setCost] = useState(price);
+    let [cost, setCost] = useState();
+
+    useEffect(()=>{
+        const update = async()=>{
+            await setCount(quantity);
+            await setCost(quantity*price);
+        }
+
+        update();
+
+    },[quantity,price])
 
 
     function incrementCount() {
@@ -59,6 +70,8 @@ function CartItem(props) {
             </div>
 
             <div className="cart-item-name">{props.name}</div>
+
+            {console.log(props.name +'n'+ cost+' final '+ count)}
 
             <div className="cart-item-price">$ {cost}</div>
 

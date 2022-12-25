@@ -4,8 +4,13 @@ import Header from './Header/Header';
 import MainArea from './MainArea/MainArea';
 import Cart from './Cart/Cart';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { fCart } from './MainArea/MainArea';
 
 function App() {
+
+  const createCart = (item)=>{
+    
+  }
   return (
 
     <div className="App">
@@ -16,12 +21,12 @@ function App() {
 
           <Route path='/' element={<>
             <Header />
-            <MainArea />
+            <MainArea final={createCart}/>
           </>} />
 
           <Route path='/cart' element={<>
             <Header />
-            <Cart />
+            <Cart fCart = {fCart}/>
           </>} />
 
 
