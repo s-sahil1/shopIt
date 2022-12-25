@@ -54,8 +54,6 @@ function Cart() {
         });
         console.log(finalCart);
 
-        upd
-
         calcPrice();
 
     }
